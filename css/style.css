@@ -1,0 +1,117 @@
+:root {
+    --color_1D2939: #1D2939;
+    --color_fff: #fff;
+    --color_E5E9EC: #E5E9EC;
+    --color_F5F5F5: #F5F5F5;
+    --color_EEEEEE: #EEEEEE;
+    --color_C7C7C7: #C7C7C7;
+    --color_28A745: #28A745;
+}
+
+body {
+    font-family: 'YekanBakh-Regular';
+    background-color: var(--color_E5E9EC);
+}
+.icon-pack{
+    display: none;
+}
+.header {
+    width: 100%;
+    height: 5.2rem;
+    background-color: var(--color_1D2939);
+    color: var(--color_fff);
+    font-size: 2.4rem;
+    border-radius: 1rem;
+    line-height: 5.2rem;
+    text-align: center;
+    font-family: 'Rubik';
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 3rem;
+}
+
+.steps {
+    height: 20rem;
+    background-color: var(--color_fff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: auto; /* اضافه شد برای اطمینان */
+}
+
+.step__list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 19.5rem; /* مهم: هر ستون دقیقا اندازه آیتم‌ */
+    grid-auto-rows: 5.2rem;
+    gap: .5rem;
+    background-color: transparent;
+    height: 100%;
+
+    padding: 0 2rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    align-content: center;
+    /* حذف justify-content چون باعث جمع شدن میشه */
+}
+
+.step__item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+    color: var(--color_C7C7C7);
+}
+.step__icon{
+    display: flex;
+    width: 5.2rem;
+    height: 5.2rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--color_F5F5F5);
+    position: relative;
+
+}
+.step__line{
+    flex-grow: 1;
+    height: 0;
+    border-bottom: 1px solid var(--color_EEEEEE);
+}
+.step__icon::after{
+    position: absolute;
+    bottom: -3.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 1.6rem;
+    font-family: 'YekanBakh-Medium';
+}
+.step__item:nth-child(1) .step__icon::after{
+    content: "انتخاب قطار";
+}
+.step__item:nth-child(2) .step__icon::after{
+    content: "مشخصات مسافران";
+}
+.step__item:nth-child(3) .step__icon::after{
+    content: "تایید اطلاعات";
+}
+.step__item:nth-child(4) .step__icon::after{
+    content: "تایید پرداخت";
+}
+.step__item:nth-child(5) .step__icon::after{
+    content: "صدور بلیط";
+}
+.step__item.step__item--active{
+    color: var(--color_fff);
+}
+.step__item.step__item--active .step__icon{
+    background-color: var(--color_28A745);
+}
+.step__item.step__item--active .step__icon::after{
+    color: var(--color_28A745);
+}
+.step__item.step__item--active .step__line{
+    border-bottom: 1px solid var(--color_28A745);
+}
